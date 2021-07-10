@@ -18,6 +18,14 @@ while True:
         tasks.append(task_dict)
         print(task_dict)
 
+    elif option == "2":
+        i = 1
+        for task in tasks:
+            print(f"{i} - {task['title']} - {task['priority']}")
+            i += 1
+        deleted_task = int(input("Enter the task number that you wish to delete: "))
+        del tasks[deleted_task -1]
+
     elif option == "3":
         i = 1
         for task in tasks:
