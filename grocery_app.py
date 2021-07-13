@@ -61,10 +61,10 @@ while True:
             store = shopping_list[index]
             print(f"{i} - store name: {store.title},   store address: {store.address}")
             i += 1
-        for index in range(0, len(store.items)):
-            title = store.items[index].title
-            quantity = store.items[index].quantity 
-            print(title, quantity)
+            for index in range(0, len(store.items)):
+                title = store.items[index].title
+                quantity = store.items[index].quantity 
+                print(title, quantity)
     
         
        
