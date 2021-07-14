@@ -31,71 +31,63 @@ while True:
     
         if option == 1:
             store_name = input("Enter store name: ")
-            if store_name == "":
-                print("Please enter store name")
             store_address = input("Enter store address: ")
-            if store_address == "":
-                print("Please enter store address")
-            
-
             store = ShoppingList(store_name, store_address)
             shopping_lists.append(store)
 
         elif option == 2:
         
-
-            for i in range(0, len(shopping_lists)):
-                print(f"{i + 1} - {shopping_lists[i].title}")
-                store = shopping_lists[i]
+            for index in range(0, len(shopping_lists)):
+                store = shopping_lists[index]
+                print(f"{index + 1} - {store.title}")
+                
             store_index = int(input("Enter the store number: "))
             item_name = input("Enter the name of the item: ")
             price = float(input("Enter the price: "))
             quantity = int(input("Enter the quantity: "))
-            thing = Items(item_name, price, quantity)
+            item = Items(item_name, price, quantity)
             
-            shopping_lists[store_index -1].items.append(thing)
+            shopping_lists[store_index -1].items.append(item)
         
         
 
         elif option == 3:
-            i = 1
+            
             for index in range(0, len(shopping_lists)):
                 store = shopping_lists[index]
-                print(f"{i} {store.title}")
-                i += 1
+                print(f"{index + 1} {store.title}")
+                
                 for index in range(0, len(store.items)):
                     title = store.items[index].title
                     quantity = store.items[index].quantity 
                     print(f" - {title} ({quantity})")
         
         elif option == 4:
-            for i in range(0, len(shopping_lists)):
-                print(f"{i + 1} - {shopping_lists[i].title}")
-                store = shopping_lists[i]
+            for index in range(0, len(shopping_lists)):
+                store = shopping_lists[index]
+                print(f"{index + 1} - {store.title}")
+                
             delete_store = int(input("Enter the store number that you wish to delete: "))
             del shopping_lists[delete_store - 1]
 
         elif option == 5:
-            i = 1
+            
             for index in range(0, len(shopping_lists)):
                 store = shopping_lists[index]
-                print(f"{i} {store.title}")
-                i += 1
-                x = 1
+                print(f"{index + 1} {store.title}")
+                
                 for index in range(0, len(store.items)):
                     title = store.items[index].title
                     quantity = store.items[index].quantity 
-                    print(f"   {x} - {title} ({quantity})")
-                    x += 1
+                    print(f"   {index +1} - {title} ({quantity})")
+                    
             delete_item_store = int(input("Enter the store number that you wish to delete an item from: "))
             store = shopping_lists[delete_item_store - 1]
-            for i in range(0, len(store.items)):
-                print(f"{i + 1} {store.items[i].title}")
+            for index in range(0, len(store.items)):
+                print(f"{index + 1} {store.items[index].title}")
 
             delete_item = int(input("Enter the number of the item that you wish to delete: "))
             del store.items[delete_item - 1]
-
-
 
         
         elif option == 6:
